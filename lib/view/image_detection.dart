@@ -12,6 +12,12 @@ class _AugmentedPageState extends State<AugmentedPage> {
   Map<int, ArCoreAugmentedImage> augmentedImagesMap = Map();
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
@@ -58,6 +64,8 @@ class _AugmentedPageState extends State<AugmentedPage> {
 
   Future _addSphere(ArCoreAugmentedImage augmentedImage) async {
     final ByteData textureBytes = await rootBundle.load('assets/earth.jpg');
+    
+    final ByteData texture = await NetworkAssetBundle(Uri.parse('https://thumbs.dreamstime.com/b/texture-soccer-ball-13533294.jpg')).load("");
 
     final material = ArCoreMaterial(
       color: Color.fromARGB(120, 66, 134, 244),
