@@ -68,7 +68,7 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
     this.arSessionManager.onInitialize(
       showFeaturePoints: false,
       showPlanes: true,
-      customPlaneTexturePath: "images/triangle.png",
+      customPlaneTexturePath: "assets/images/triangle.png",
       showWorldOrigin: true,
       handlePans: true,
       handleRotation: true,
@@ -112,11 +112,8 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
             scale: Vector3(0.2, 0.2, 0.2),
             position: Vector3(0.0, 0.0, 0.0),
             rotation: Vector4(1.0, 0.0, 0.0, 0.0));
-        bool didAddNodeToAnchor = arObjectManager.addNode(newNode, planeAnchor: newAnchor) as bool;
         if (true) {
           nodes.add(newNode);
-        } else {
-          arSessionManager.onError("Adding Node to Anchor failed");
         }
       } else {
         arSessionManager.onError("Adding Anchor failed");
@@ -137,11 +134,7 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
     final pannedNode =
     nodes.firstWhere((element) => element.name == nodeName);
 
-    /*
-    * Uncomment the following command if you want to keep the transformations of the Flutter representations of the nodes up to date
-    * (e.g. if you intend to share the nodes through the cloud)
-    */
-    //pannedNode.transform = newTransform;
+    pannedNode.transform = newTransform;
   }
 
   onRotationStarted(String nodeName) {
@@ -156,11 +149,6 @@ class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
     print("Ended rotating node " + nodeName);
     final rotatedNode =
     nodes.firstWhere((element) => element.name == nodeName);
-
-    /*
-    * Uncomment the following command if you want to keep the transformations of the Flutter representations of the nodes up to date
-    * (e.g. if you intend to share the nodes through the cloud)
-    */
-    //rotatedNode.transform = newTransform;
+    rotatedNode.transform = newTransform;
   }
 }
