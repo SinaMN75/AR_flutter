@@ -49,6 +49,7 @@ class _AugmentedPageState extends State<AugmentedPage> {
   }
 
   _handleOnTrackingImage(ArCoreAugmentedImage augmentedImage) {
+    //problem craaaash
     if (true) {
       augmentedImagesMap[augmentedImage.index] = augmentedImage;
       _addSphere(augmentedImage);
