@@ -1,3 +1,4 @@
+import 'package:ar_core/view/image_detection.dart';
 import 'package:ar_core/view/object_plan.dart';
 import 'package:flutter/material.dart';
 import 'view/augmented_faces.dart';
@@ -59,6 +60,14 @@ class MyHomePage extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => ObjectGesturesWidget()));
                 },
                 child: boX('plan detection')),
+            SizedBox(
+              height: 12,
+            ),
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => AugmentedPage()));
+                },
+                child: boX('image detection')),
           ],
         ),
       ),

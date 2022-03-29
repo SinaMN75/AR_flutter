@@ -65,6 +65,8 @@ flutter:
   assets:
     - assets/
     - assets/image/
+    - assets/myimages.imgdb
+    - assets/earth_augmented_image.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image assets can refer to one or more resolution-specific "variants", see
