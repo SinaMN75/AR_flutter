@@ -43,9 +43,9 @@ class _AugmentedPageState extends State<AugmentedPage> {
   }
 
   loadSingleImage() async {
-    final ByteData bytes = await NetworkAssetBundle(Uri.parse('https://m.media-amazon.com/images/I/71hJgA36ihL._AC_SX425_.jpg')).load("");
+   // final ByteData bytes = await NetworkAssetBundle(Uri.parse('https://m.media-amazon.com/images/I/71hJgA36ihL._AC_SX425_.jpg')).load("");
 
-   // final ByteData bytes = await rootBundle.load('assets/earth_augmented_image.jpg');
+    final ByteData bytes = await rootBundle.load('assets/earth_augmented_image.jpg');
     arCoreController.loadSingleAugmentedImage(bytes: bytes.buffer.asUint8List());
   }
 
