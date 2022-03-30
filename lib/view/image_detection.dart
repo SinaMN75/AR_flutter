@@ -24,9 +24,10 @@ class _AugmentedPageState extends State<AugmentedPage> {
         appBar: AppBar(
           title: const Text('Image Detection'),
         ),
-        body: ArCoreView(
-          onArCoreViewCreated: _onArCoreViewCreated,
-          type: ArCoreViewType.AUGMENTEDIMAGES,
+        body:
+            ArCoreView(
+              onArCoreViewCreated: _onArCoreViewCreated,
+              type: ArCoreViewType.AUGMENTEDIMAGES,
         ),
       ),
     );
@@ -35,23 +36,22 @@ class _AugmentedPageState extends State<AugmentedPage> {
   void _onArCoreViewCreated(ArCoreController controller) {
     arCoreController = controller;
     arCoreController.onTrackingImage = _handleOnTrackingImage;
-    // loadSingleImage();
+    loadSingleImage();
     //OR
 
-    loadImagesDatabase();
+    // loadImagesDatabase();
   }
 
   loadSingleImage() async {
-    final ByteData bytes =
-    await rootBundle.load('assets/earth_augmented_image.jpg');
-    arCoreController.loadSingleAugmentedImage(
-        bytes: bytes.buffer.asUint8List());
+    final ByteData bytes = await NetworkAssetBundle(Uri.parse('https://m.media-amazon.com/images/I/71hJgA36ihL._AC_SX425_.jpg')).load("");
+
+   // final ByteData bytes = await rootBundle.load('assets/earth_augmented_image.jpg');
+    arCoreController.loadSingleAugmentedImage(bytes: bytes.buffer.asUint8List());
   }
 
   loadImagesDatabase() async {
     final ByteData bytes = await rootBundle.load('assets/myimages.imgdb');
-    arCoreController.loadAugmentedImagesDatabase(
-        bytes: bytes.buffer.asUint8List());
+    arCoreController.loadAugmentedImagesDatabase(bytes: bytes.buffer.asUint8List());
   }
 
   _handleOnTrackingImage(ArCoreAugmentedImage augmentedImage) {
@@ -63,9 +63,10 @@ class _AugmentedPageState extends State<AugmentedPage> {
   }
 
   Future _addSphere(ArCoreAugmentedImage augmentedImage) async {
-    final ByteData textureBytes = await rootBundle.load('assets/earth.jpg');
-    
-    final ByteData texture = await NetworkAssetBundle(Uri.parse('https://thumbs.dreamstime.com/b/texture-soccer-ball-13533294.jpg')).load("");
+
+   // final ByteData textureBytes = await rootBundle.load('assets/earth.jpg');
+
+    final ByteData textureBytes = await NetworkAssetBundle(Uri.parse('https://thumbs.dreamstime.com/b/texture-soccer-ball-13533294.jpg')).load("");
 
     final material = ArCoreMaterial(
       color: Color.fromARGB(120, 66, 134, 244),
