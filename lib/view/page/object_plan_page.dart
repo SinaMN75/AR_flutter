@@ -12,12 +12,12 @@ import 'package:ar_flutter_plugin/models/ar_node.dart';
 import 'package:ar_flutter_plugin/models/ar_hittest_result.dart';
 import 'package:vector_math/vector_math_64.dart';
 
-class ObjectGesturesWidget extends StatefulWidget {
+class ObjectGesturesPage extends StatefulWidget {
   @override
-  _ObjectGesturesWidgetState createState() => _ObjectGesturesWidgetState();
+  _ObjectGesturesPageState createState() => _ObjectGesturesPageState();
 }
 
-class _ObjectGesturesWidgetState extends State<ObjectGesturesWidget> {
+class _ObjectGesturesPageState extends State<ObjectGesturesPage> {
   late ARSessionManager arSessionManager;
   late ARObjectManager arObjectManager;
   late ARAnchorManager arAnchorManager;

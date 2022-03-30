@@ -4,14 +4,14 @@ import 'package:flutter/services.dart';
 import 'package:vector_math/vector_math_64.dart' as vector;
 
 
-class ImageObjectScreen extends StatefulWidget {
+class ImageObjectPage extends StatefulWidget {
 
   @override
-  _ImageObjectScreenState createState() => _ImageObjectScreenState();
+  _ImageObjectPageState createState() => _ImageObjectPageState();
 }
 
 
-class _ImageObjectScreenState extends State<ImageObjectScreen> {
+class _ImageObjectPageState extends State<ImageObjectPage> {
   late ArCoreController arCoreController;
 
   @override

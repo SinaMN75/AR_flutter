@@ -28,6 +28,7 @@ class _AugmentedPageState extends State<AugmentedPage> {
             ArCoreView(
               onArCoreViewCreated: _onArCoreViewCreated,
               type: ArCoreViewType.AUGMENTEDIMAGES,
+              enablePlaneRenderer: false,
         ),
       ),
     );

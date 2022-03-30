@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:arcore_flutter_plugin/arcore_flutter_plugin.dart';
 import 'package:flutter/services.dart';
 
-class AugmentedFacesScreen extends StatefulWidget {
+class AugmentedFacePage extends StatefulWidget {
   @override
-  _AugmentedFacesScreenState createState() => _AugmentedFacesScreenState();
+  _AugmentedFacePageState createState() => _AugmentedFacePageState();
 }
 
-class _AugmentedFacesScreenState extends State<AugmentedFacesScreen> {
+class _AugmentedFacePageState extends State<AugmentedFacePage> {
   late ArCoreFaceController arCoreFaceController;
 
   int _selectedFace = 0;
