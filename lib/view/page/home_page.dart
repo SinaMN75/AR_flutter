@@ -1,4 +1,5 @@
 import 'package:ar_core/view/page/screen/assets_object.dart';
+import 'package:ar_core/view/page/screen/augmented_image/text.dart';
 import 'package:ar_core/view/page/screen/auto_detect_plane.dart';
 import 'package:ar_core/view/page/screen/custom_object.dart';
 import 'package:ar_core/view/page/screen/image_object.dart';
@@ -132,6 +133,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(context, MaterialPageRoute(builder: (_) => ObjectWithTextureAndRotation()));
                 },
                 child: boX('Object Rotation')),
+            SizedBox(
+              height: 12,
+            ),
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => TextAugmented()));
+                },
+                child: boX('text')),
           ],
         ),
       ),
