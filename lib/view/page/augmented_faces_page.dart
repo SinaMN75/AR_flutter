@@ -9,7 +9,7 @@ class AugmentedFacePage extends StatefulWidget {
 }
 
 class _AugmentedFacePageState extends State<AugmentedFacePage> {
-  late ArCoreFaceController arCoreFaceController;
+  ArCoreFaceController arCoreFaceController;
 
   int _selectedFace = 0;
 
@@ -82,7 +82,7 @@ class _AugmentedFacePageState extends State<AugmentedFacePage> {
   loadMesh() async {
     final ByteData textureBytes = await rootBundle.load(faceList[_selectedFace]);
 
-    arCoreFaceController.loadMesh(textureBytes: textureBytes.buffer.asUint8List(), skin3DModelFilename: 'fox_face.sfb');
+    arCoreFaceController.loadMesh(textureBytes: textureBytes.buffer.asUint8List(), skin3DModelFilename: 'ox_face.sfb');
   }
 
   @override

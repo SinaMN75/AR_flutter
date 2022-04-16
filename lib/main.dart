@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 //page
 import 'view/page/home_page.dart';
 
-
-void main() {
+ main(){
   runApp(MyApp());
 }
 

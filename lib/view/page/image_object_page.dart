@@ -12,7 +12,7 @@ class ImageObjectPage extends StatefulWidget {
 
 
 class _ImageObjectPageState extends State<ImageObjectPage> {
-  late ArCoreController arCoreController;
+  ArCoreController arCoreController;
 
   @override
   Widget build(BuildContext context) {
