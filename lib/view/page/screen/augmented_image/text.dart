@@ -12,6 +12,14 @@ class _TextAugmentedState extends State<TextAugmented> {
   Map<int, ArCoreAugmentedImage> augmentedImagesMap = Map();
 
   bool visible = false;
+  AssetImage image = AssetImage('assets/copertina.jpg');
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    image;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,17 +40,20 @@ class _TextAugmentedState extends State<TextAugmented> {
                 visible: visible,
                 child: Container( decoration: BoxDecoration(
                     color: Colors.white,
+                //     image: DecorationImage(
+                //   image: image,
+                //   fit: BoxFit.fitHeight,
+                // ),
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
-                      bottomLeft: Radius.circular(15),
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50),
+                      bottomLeft: Radius.circular(50),
                     )
                 ),
-                    margin: EdgeInsets.all(20),
+                    padding: EdgeInsets.all(20),
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height / 3,
-
-                    child: Text('blu Bank',style: TextStyle(fontSize: 50),)
+                    child: Text('Eraser',style: TextStyle(fontSize: 50),)
                 ),
               ),
             )
@@ -56,6 +67,7 @@ class _TextAugmentedState extends State<TextAugmented> {
     arCoreController = controller;
     arCoreController.onTrackingImage = _handleOnTrackingImage;
     loadSingleImage();
+
     //OR
     // loadImagesDatabase();
   }
@@ -74,12 +86,11 @@ class _TextAugmentedState extends State<TextAugmented> {
   }
 
   _handleOnTrackingImage(ArCoreAugmentedImage augmentedImage) {
-    if (!augmentedImagesMap.containsKey(augmentedImage.index)) {
+    if (true == true) {
       augmentedImagesMap[augmentedImage.index] = augmentedImage;
       setState(() {
         visible = true;
       });
-
     }
   }
 

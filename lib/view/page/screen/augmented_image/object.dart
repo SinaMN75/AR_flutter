@@ -16,41 +16,35 @@ class _ImageAugmentedState extends State<ImageAugmented> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        appBar: AppBar(
-          title: const Text('AugmentedPage'),
-        ),
-        body: Stack(
-          children: [
-            ArCoreView(
-              onArCoreViewCreated: _onArCoreViewCreated,
-              type: ArCoreViewType.AUGMENTEDIMAGES,
-            ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Visibility(
-                visible: visible,
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 3,
-                  decoration: BoxDecoration(color: Colors.white,
-                      image: DecorationImage(
-                        image: AssetImage(
-                            'assets/copertina.jpg'),
-                        fit: BoxFit.fill,
-                      ),
+      appBar: AppBar(
+        title: const Text('AugmentedPage'),
+      ),
+      body: Stack(
+        children: [
+          ArCoreView(
+            onArCoreViewCreated: _onArCoreViewCreated,
+            type: ArCoreViewType.AUGMENTEDIMAGES,
+          ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: Visibility(
+              visible: visible,
+              child: Container(
+                decoration: BoxDecoration(color: Colors.white,
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(15),
                       topRight: Radius.circular(15),
                       bottomLeft: Radius.circular(15),
                     )
-                  ),
-                    margin: EdgeInsets.all(20),
                 ),
+                margin: EdgeInsets.all(20),
+                child: Image.asset('assets/copertina.jpg'),
               ),
-            )
-          ],
-        ),
-      );
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   void _onArCoreViewCreated(ArCoreController controller) async {

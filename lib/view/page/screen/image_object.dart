@@ -35,10 +35,10 @@ class _ImageObjectScreenState extends State<ImageObjectScreen> {
 
   Future _addImage(ArCoreHitTestResult hit) async {
 
-     final bytes = (await rootBundle.load('assets/earth.jpg')).buffer.asUint8List();
+     final bytes = (await rootBundle.load('assets/copertina.jpg')).buffer.asUint8List();
 
     final earth = ArCoreNode(
-      image: ArCoreImage(bytes: bytes, width: 100, height: 100),
+      image: ArCoreImage(bytes: bytes, width: 120, height: 160),
       position: hit.pose.translation + vector.Vector3(0.0, 0.0, 0.0),
       rotation: hit.pose.rotation + vector.Vector4(0.0, 0.0, 0.0, 0.0),
     );
